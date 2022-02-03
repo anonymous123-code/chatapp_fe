@@ -14,18 +14,14 @@ export default {
   },
   methods: {
     sendMessage() {
-      let token = this.token;
-      let auth = "Bearer " + token;
+      let auth = "Bearer " + this.token;
       axios.post(
         `http://localhost:8000/chats/${this.$route.params.chatId}/messages/`,
         {},
         {
           params: { msg: this.message },
           headers: {
-            Authorization: (() => {
-              console.log(auth);
-              return auth;
-            })(),
+            Authorization: auth,
           },
         }
       );
