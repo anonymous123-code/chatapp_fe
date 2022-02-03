@@ -47,11 +47,7 @@ export default {
 }
 
 .message:hover {
-  background: linear-gradient(
-    to bottom,
-    var(--color-background-soft) calc((0.5 - 1) * 10000%),
-    transparent calc(0.5 * 10000%)
-  );
+  background: rgba(var(--color-background-soft-tupel), 64);
 }
 
 .message .username {
