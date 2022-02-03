@@ -1,10 +1,15 @@
 # chatapp_fe
 
+This is the code for the frontend of [ChatApp](https://github.com/anonymous123-code/chatApp). Port settings are set up for my dev environment.
+
+Currently the Token in [src/views/ChatView.vue](https://github.com/anonymous123-code/chatapp_fe/blob/2fd7a6cab7527372b988d74fb5678026c95a0c9b/src/views/ChatView.vue#L57) line 57 must be updated when expired for the Api to work.
+
 This template should help get you started developing with Vue 3 in Vite.
 
 ## Recommended IDE Setup
 
 [VSCode](https://code.visualstudio.com/) + [Volar](https://marketplace.visualstudio.com/items?itemName=johnsoncodehk.volar) (and disable Vetur) + [TypeScript Vue Plugin (Volar)](https://marketplace.visualstudio.com/items?itemName=johnsoncodehk.vscode-typescript-vue-plugin).
+Idea is possible too
 
 ## Type Support for `.vue` Imports in TS
 
