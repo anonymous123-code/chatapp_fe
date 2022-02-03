@@ -28,10 +28,7 @@ export default {
         `http://localhost:8000/chats/${this.$route.params.chatId}/messages/${this.message.id}`,
         {
           headers: {
-            Authorization: (() => {
-              console.log(auth);
-              return auth;
-            })(),
+            Authorization: auth,
           },
         }
       );
