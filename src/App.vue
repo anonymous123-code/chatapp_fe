@@ -32,7 +32,6 @@ import HelloWorld from "@/components/HelloWorld.vue";
 
 #app {
   margin: 0 auto;
-  padding: 2rem;
 
   font-weight: normal;
 }
@@ -94,7 +93,6 @@ nav a:first-of-type {
   #app {
     display: grid;
     grid-template-columns: 1fr 1fr;
-    padding: 0 2rem;
   }
 
   header {

@@ -85,15 +85,15 @@ export default {
 
 <style scoped>
 .wrapper {
+  padding: 2rem;
   display: flex;
   flex-direction: row;
-  max-height: 100vh;
+  height: calc(100vh - 4rem);
+  width: calc(100vw - 4rem);
 }
 .centerContainer {
   flex-grow: 1;
   display: flex;
   flex-direction: column;
-  max-height: 100vh;
-  width: 50vw;
 }
 </style>
