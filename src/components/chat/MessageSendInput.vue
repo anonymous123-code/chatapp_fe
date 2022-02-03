@@ -35,10 +35,32 @@ export default {
 <style scoped>
 .messageInput {
   height: 30px;
+  border-radius: 5px;
+  background-color: var(--color-background-soft);
   display: flex;
   flex-direction: row;
+  cursor: text;
+  padding: 5px;
 }
+
+.messageInput:focus-within {
+  background-color: var(--color-background-mute);
+}
+
+.messageInput * {
+  background: transparent;
+  border-width: 0;
+  color: var(--color-text);
+}
+
 .messageInput input {
   flex-grow: 1;
+  outline: none;
+}
+.messageInput button {
+  cursor: pointer;
+}
+.messageInput input:focus-within {
+  border-bottom: 2px solid #ddf7;
 }
 </style>
