@@ -48,6 +48,15 @@ export default {
 .message:hover .editMenu {
   display: inline;
 }
+
+.message:hover {
+  background: linear-gradient(
+    to bottom,
+    var(--color-background-soft) calc((0.5 - 1) * 10000%),
+    transparent calc(0.5 * 10000%)
+  );
+}
+
 .message .username {
   font-weight: bold;
 }
