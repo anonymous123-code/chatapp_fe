@@ -36,12 +36,12 @@ export default {
 <style scoped>
 .messageInput {
   height: 30px;
-  border-radius: 5px;
+  border-radius: 7px;
   background-color: var(--color-background-soft);
   display: flex;
   flex-direction: row;
   cursor: text;
-  padding: 5px;
+  margin: 3px;
 }
 
 .messageInput:focus-within {
@@ -52,16 +52,33 @@ export default {
   background: transparent;
   border-width: 0;
   color: var(--color-text);
+  margin: 5px;
 }
 
 .messageInput input {
+  border-bottom: 2px hidden #ddd0;
   flex-grow: 1;
   outline: none;
 }
 .messageInput button {
   cursor: pointer;
+  margin: 0;
+  padding: 5px;
+  border-radius: 7px;
+}
+.messageInput button:hover {
+  background-color: #aaa2;
 }
 .messageInput input:focus-within {
-  border-bottom: 2px solid #ddf7;
+  border-bottom: 2px solid #aaa2;
+}
+
+@media (prefers-color-scheme: dark) {
+  .messageInput input:focus-within {
+    border-bottom: 2px solid #ddd2;
+  }
+  .messageInput button:hover {
+    background-color: #fff1;
+  }
 }
 </style>
