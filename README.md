@@ -1,6 +1,6 @@
 # chatapp_fe
 
-This is the code for the frontend of [ChatApp](https://github.com/anonymous123-code/chatApp). Port settings are set up for my dev environment.
+This is the code for the frontend of [ChatApp](https://github.com/anonymous123-code/chatApp). The backend should run at http://localhost:8000
 
 Currently the Token in [src/views/ChatView.vue](https://github.com/anonymous123-code/chatapp_fe/blob/2fd7a6cab7527372b988d74fb5678026c95a0c9b/src/views/ChatView.vue#L57) line 57 must be updated when expired for the Api to work.
 
