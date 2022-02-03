@@ -1,7 +1,7 @@
 <template>
-  <div class="messageInput">
-    <input v-model="message" v-on:keydown.enter="sendMessage" />
-    <button v-on:click="sendMessage">Send</button>
+  <div class="messageInput" v-on:click="$refs.chatInput.focus()">
+    <input v-model="message" v-on:keydown.enter="sendMessage" ref="chatInput" />
+    <button v-on:click.stop="sendMessage" ref="sendButton">Send</button>
   </div>
 </template>
 
@@ -25,6 +25,7 @@ export default {
           },
         }
       );
+      this.$refs.sendButton.blur();
       this.message = "";
     },
   },
