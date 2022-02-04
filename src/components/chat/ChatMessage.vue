@@ -2,8 +2,8 @@
   <div class="message">
     <span class="username">{{ message.author.username }}</span>
     <span class="editMenu">
-      <button>Edit</button>
-      <button v-on:click="deleteMessage">Delete</button>
+      <VButton>Edit</VButton>
+      <VButton v-on:click="deleteMessage">Delete</VButton>
     </span>
     <div>{{ message.content }}</div>
   </div>
@@ -11,9 +11,11 @@
 
 <script>
 import axios from "axios";
+import VButton from "@/components/abstract/VButton.vue";
 
 export default {
   name: "ChatMessage",
+  components: { VButton },
   data: () => {
     return {
       console: console,
@@ -45,9 +47,11 @@ export default {
 .message:hover .editMenu {
   display: inline;
 }
-
+.editMenu button {
+  display: inline-block;
+}
 .message:hover {
-  background: rgba(var(--color-background-soft-tupel), 64);
+  background: rgba(var(--color-background-soft-tupel), 0.4);
 }
 
 .message .username {
