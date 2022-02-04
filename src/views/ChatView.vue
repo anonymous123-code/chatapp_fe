@@ -37,43 +37,43 @@
       <!-- Modal content -->
       <div class="loginDialog-content" v-on:click.stop>
         <form name="loginForm" class="loginForm">
-          <input
+          <VInput
             v-model="username"
             autocomplete="username"
             placeholder="Username"
           />
-          <input
+          <VInput
             type="password"
             v-model="password"
             autocomplete="current-password"
             placeholder="Password"
           />
-          <button type="button" v-on:click="login">Login</button>
+          <VButton v-on:click="login">Login</VButton>
         </form>
         <p>- or -</p>
         <form name="registerForm" class="registerForm">
-          <input
+          <VInput
             v-model="registerEmail"
             autocomplete="email"
             placeholder="Email"
           />
-          <input
+          <VInput
             v-model="registerFullName"
             autocomplete="name"
             placeholder="Full Name"
           />
-          <input
+          <VInput
             v-model="registerUsername"
             autocomplete="username"
             placeholder="Username"
           />
-          <input
+          <VInput
+            v-model="registerPassword"
             type="password"
             autocomplete="new-password"
-            v-model="registerPassword"
             placeholder="Password"
           />
-          <button type="button" v-on:click="register">Register</button>
+          <VButton v-on:click="register">Register</VButton>
         </form>
       </div>
     </div>
@@ -87,10 +87,14 @@ import ChatMessageList from "@/components/chat/ChatMessageList.vue";
 import ChatUserList from "@/components/chat/ChatUserList.vue";
 import MessageSendInput from "@/components/chat/MessageSendInput.vue";
 import ChatGenerateInvite from "@/components/chat/ChatGenerateInvite.vue";
+import VButton from "@/components/abstract/VButton.vue";
+import VInput from "@/components/abstract/VInput.vue";
 
 export default {
   name: "ChatView",
   components: {
+    VInput,
+    VButton,
     ChatGenerateInvite,
     MessageSendInput,
     ChatUserList,
@@ -219,35 +223,15 @@ export default {
   border: 1px solid var(--color-border);
   background-color: rgba(var(--color-background-soft-tupel), 0.4);
 }
-.loginForm input,
-.registerForm input {
-  display: block;
-  margin: 5px 0;
-  border-width: 0;
-  border-radius: 5px;
-  color: var(--color-text);
+.loginForm div,
+.registerForm div {
   width: 150px;
   background-color: var(--color-background-soft);
 }
-.loginForm input:focus,
-.registerForm input:focus {
-  outline: none;
-  background-color: var(--color-background-mute);
-}
 .registerForm button,
 .loginForm button {
-  display: block;
-  background-color: var(--color-background-soft);
-  border-width: 0;
-  border-radius: 5px;
-  color: var(--color-text);
   width: calc(150px - 2 * 20px);
-  padding: 5px;
   margin: 2px 20px;
-}
-.registerForm button:hover,
-.loginForm button:hover {
-  background-color: var(--color-background-mute);
 }
 .loginDialog-content p {
   text-align: center;
