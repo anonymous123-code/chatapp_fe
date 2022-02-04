@@ -27,7 +27,9 @@ export default {
       let token = this.token;
       let auth = "Bearer " + token;
       axios.delete(
-        `http://localhost:8000/chats/${this.$route.params.chatId}/messages/${this.message.id}`,
+        `${import.meta.env.VITE_APIROOT}chats/${
+          this.$route.params.chatId
+        }/messages/${this.message.id}`,
         {
           headers: {
             Authorization: auth,

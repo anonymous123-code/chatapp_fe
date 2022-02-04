@@ -126,7 +126,7 @@ export default {
     refreshChats() {
       if (this.token.length === 0) return;
       axios
-        .get("http://localhost:8000/chats/", {
+        .get(`${import.meta.env.VITE_APIROOT}chats/`, {
           headers: {
             Authorization: `Bearer ${this.token}`,
           },
@@ -167,13 +167,16 @@ export default {
       params.append("scope", "");
       params.append("client_id", "");
       params.append("client_secret", "");
-      axios.post("http://localhost:8000/token", params).then((response) => {
-        this.token_ = response.data.access_token;
-      });
+      console.log(import.meta.env.VITE_APIROOT);
+      axios
+        .post(`${import.meta.env.VITE_APIROOT}token`, params)
+        .then((response) => {
+          this.token_ = response.data.access_token;
+        });
     },
     register() {
       axios.post(
-        "http://localhost:8000/users/register",
+        `${import.meta.env.VITE_APIROOT}users/register`,
         {},
         {
           params: {

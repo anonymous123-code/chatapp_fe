@@ -26,7 +26,9 @@ export default {
     generate() {
       axios
         .post(
-          `http://localhost:8000/chats/${this.$route.params.chatId}/invite`,
+          `${import.meta.env.VITE_APIROOT}chats/${
+            this.$route.params.chatId
+          }/invite`,
           {},
           {
             headers: {

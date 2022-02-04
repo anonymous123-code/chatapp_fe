@@ -31,7 +31,7 @@ export default {
   },
   methods: {
     useInvite() {
-      axios.get(`http://localhost:8000/invite/${this.invite}`, {
+      axios.get(`${import.meta.env.VITE_APIROOT}invite/${this.invite}`, {
         headers: {
           Authorization: `Bearer ${this.token}`,
         },
@@ -39,7 +39,7 @@ export default {
     },
     createChat() {
       axios.post(
-        `http://localhost:8000/chats/`,
+        `${import.meta.env.VITE_APIROOT}chats/`,
         {},
         {
           headers: {
