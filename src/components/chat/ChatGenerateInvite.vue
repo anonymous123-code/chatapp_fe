@@ -1,16 +1,24 @@
 <template>
-  <button v-on:click="generate" title="Generate Invite">Generate Invite</button>
-  <div v-if="invite.length > 0">Invite: {{ invite }}</div>
+  <VButton v-on:click="generate" title="Generate Invite"
+    >Generate Invite</VButton
+  >
+  <VDialog v-model:visible="visible">
+    <div style="padding: 10px">Invite: {{ invite }}</div>
+  </VDialog>
 </template>
 
 <script>
 import axios from "axios";
+import VButton from "@/components/abstract/VButton.vue";
+import VDialog from "@/components/abstract/VDialog.vue";
 
 export default {
   name: "ChatGenerateInvite",
+  components: { VDialog, VButton },
   props: ["token"],
   data: () => {
     return {
+      visible: false,
       invite: "",
     };
   },
@@ -27,6 +35,7 @@ export default {
           }
         )
         .then((response) => {
+          this.visible = true;
           this.invite = response.data.invite;
         });
     },
